@@ -1,0 +1,3 @@
+/home/artem/MyPrograms/C++/Testovoe/ServerApp/build/CMakeFiles/Server.dir
+/home/artem/MyPrograms/C++/Testovoe/ServerApp/build/CMakeFiles/edit_cache.dir
+/home/artem/MyPrograms/C++/Testovoe/ServerApp/build/CMakeFiles/rebuild_cache.dir
