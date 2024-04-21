@@ -64,6 +64,7 @@ void Server::run(){
 
         std::cout << "New connection accepted!" << std::endl;
         
+        
         std::thread t(clientSession, sock, logger);
         t.detach();
 	}

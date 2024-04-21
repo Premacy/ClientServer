@@ -11,7 +11,7 @@ int main(char argc, char *argv[]){
 
 	ILogger *logger = new FileLogger("logFile.txt");
 
-	IServer *server = new Server(port, logger);
+	auto server = std::unique_ptr<IServer>( new Server(port, logger) );
 	server->run();
 
 	return 0;

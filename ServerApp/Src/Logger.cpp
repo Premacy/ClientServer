@@ -10,7 +10,6 @@ FileLogger::~FileLogger(){
 }
 
 void FileLogger::log(std::string msg){
-	lockMutex.lock();
-		outFile << msg;
-	lockMutex.unlock();
+	const std::lock_guard<std::mutex> lock(lockMutex);
+    outFile << msg;
 }

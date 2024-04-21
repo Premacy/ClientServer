@@ -4,22 +4,27 @@
 #include <mutex>
 #include <fstream>
 
-class ILogger{
+class ILogger_t{
 public:
-	//virtual ~ILogger() = 0;
-	virtual void log(std::string msg) = 0;
+    virtual std::unique_ptr<ILogger> create() = 0;
+    virtual void log(std::string msg) = 0;
+
+	virtual ~ILogger() = default;
 };
 
 class FileLogger : public ILogger{
 public:
-
-	FileLogger(std::string filepath);
 	~FileLogger();
 
 	void log(std::string msg) override;
+	std::unique_ptr<ILogger> create() override;
 
 private:
+	FileLogger(std::string filepath);
 
+private:
 	std::ofstream outFile;
 	std::mutex lockMutex;
+
+	FileLogger ;
 };
